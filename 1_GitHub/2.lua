@@ -1,4 +1,3 @@
-
 local function startBaselineHacks()
 local GameplayData = require("GameLua.GameCore.Data.GameplayData")
 local EPawnState   = import("EPawnState")
@@ -8,7 +7,7 @@ local g_masterahsanyt_credit = _G.g_masterahsanyt
 local g_masterahsanyt_StartSettingsMaintenance
 
 -- ============================================================================
--- LOGIN SYSTEM REMOVED — always authorized
+-- LOGIN SYSTEM REMOVED â€” always authorized
 -- ============================================================================
 do
     local L = _G.LunarLoginRuntime or {}
@@ -48,9 +47,9 @@ end
 -- ============================================================================
 _G.g_masterahsanyt_MagicConfig = _G.g_masterahsanyt_MagicConfig or {
     Enabled        = true,
-    Head           = 1.25,
-    Body           = 1.17,
-    Legs           = 1.0,
+    Head           = 1.45,
+    Body           = 1.38,
+    Legs           = 1.20,
     LongRangeBoost = true,
     ProneBoost     = true,
 }
@@ -86,7 +85,7 @@ local function g_masterahsanyt_GetSafeEnemyKey(enemy)
 end
 
 -- ============================================================================
--- AUTO-HEAD HOOK — every weapon-entity module, every method, every mode
+-- AUTO-HEAD HOOK â€” every weapon-entity module, every method, every mode
 -- ============================================================================
 local AUTOHEAD_PATHS = {
     "GameLua.Mod.BaseMod.Common.Weapon.ShootWeaponEntity",
@@ -211,7 +210,7 @@ local function g_masterahsanyt_InstallAutoHeadHook()
 end
 
 -- ============================================================================
--- MAGIC BULLET CORE — PhysicsAsset scaling (bots + players + all poses)
+-- MAGIC BULLET CORE â€” PhysicsAsset scaling (bots + players + all poses)
 -- ============================================================================
 local function g_masterahsanyt_GetFirstElemSafe(elemArray)
     if not elemArray then return nil end
@@ -363,7 +362,7 @@ local function g_masterahsanyt_ApplyMagicBullet(localPlayer, allCharacters)
     end
 
     for _, enemy in pairs(allCharacters) do
-        -- NOTE: no TeamID filter here — bots can be on teams but models can
+        -- NOTE: no TeamID filter here â€” bots can be on teams but models can
         -- be tagged weird on custom maps. We only skip self.
         if g_masterahsanyt_Valid(enemy) and enemy ~= localPlayer then
             local dead = false
@@ -469,7 +468,7 @@ local function g_masterahsanyt_MagicTick()
         S.PhysAssetPatched = {}
         S.LastHash         = ""
         g_masterahsanyt_ResetAutoHeadHooks()
-        print("[Magic] New match — state + auto-head hooks reset")
+        print("[Magic] New match â€” state + auto-head hooks reset")
     end
 
     local me = pc:GetPlayerCharacterSafety()
