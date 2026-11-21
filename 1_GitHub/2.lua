@@ -47,9 +47,9 @@ end
 -- ============================================================================
 _G.g_masterahsanyt_MagicConfig = _G.g_masterahsanyt_MagicConfig or {
     Enabled        = true,
-    Head           = 1.45,
-    Body           = 1.38,
-    Legs           = 1.20,
+    Head           = 1.35,
+    Body           = 1.28,
+    Legs           = 1.10,
     LongRangeBoost = true,
     ProneBoost     = true,
 }
